@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASONGE BAKERY | 제과제빵과 포트폴리오</title>
+    <!-- Tailwind CSS 로드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: 깔끔하고 감성적인 Noto Sans KR, Gowun Dodum, Playfair Display 조합 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <script>
+        // 크림색, 베이지색, 브라운 계열의 베이커리 감성 컬러 토큰 설정
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF7',       /* 메인 배경 크림색 */
+                        beige: '#F4ECE1',       /* 섹션 구분 베이지색 */
+                        latte: '#E6D7C3',       /* 테두리 및 카드 포인트 */
+                        cinnamon: '#A67B5B',    /* 포인트 브라운 */
+                        espresso: '#4A3525',    /* 메인 텍스트 딥 브라운 */
+                        mocha: '#6F543E',       /* 서브 텍스트 브라운 */
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        hand: ['"Gowun Dodum"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream text-espresso font-sans antialiased selection:bg-latte selection:text-espresso">
+
+    <!-- 상단 네비게이션 바 -->
+    <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-latte transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- 로고 / 사이트 이름 -->
+                <a href="#home" class="flex items-center space-x-2 group">
+                    <span class="text-2xl" aria-hidden="true">🥐</span>
+                    <span class="font-serif text-lg sm:text-xl lg:text-2xl font-bold tracking-wider text-espresso group-hover:text-cinnamon transition-colors">
+                        ASONGE BAKERY
+                    </span>
+                </a>
+
+                <!-- 데스크톱 메뉴 -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-mocha">
+                    <a href="#about" class="hover:text-espresso hover:underline underline-offset-8 decoration-cinnamon transition-all py-2">ABOUT ME</a>
+                    <a href="#projects" class="hover:text-espresso hover:underline underline-offset-8 decoration-cinnamon transition-all py-2">MY PROJECT</a>
+                    <a href="#skills" class="hover:text-espresso hover:underline underline-offset-8 decoration-cinnamon transition-all py-2">SKILLS</a>
+                    <a href="#contact" class="hover:text-espresso hover:underline underline-offset-8 decoration-cinnamon transition-all py-2">CONTACT</a>
+                </nav>
+
+                <!-- 모바일 햄버거 버튼 -->
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-xl text-espresso hover:bg-beige focus:outline-none" aria-label="메뉴 열기">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 모바일 드롭다운 메뉴 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-latte px-4 pt-2 pb-4 space-y-1">
+            <a href="#about" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-mocha hover:text-espresso hover:bg-beige">ABOUT ME</a>
+            <a href="#projects" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-mocha hover:text-espresso hover:bg-beige">MY PROJECT</a>
+            <a href="#skills" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-mocha hover:text-espresso hover:bg-beige">SKILLS</a>
+            <a href="#contact" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-mocha hover:text-espresso hover:bg-beige">CONTACT</a>
+        </div>
+    </header>
+
+    <!-- 1. 메인 화면 (HERO SECTION) -->
+    <section id="home" class="relative py-20 sm:py-32 px-4 overflow-hidden bg-gradient-to-b from-beige/60 to-cream">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-beige border border-latte text-xs sm:text-sm font-medium text-cinnamon tracking-wide shadow-sm">
+                <span>Baking &amp; Patisserie Portfolio</span>
+            </div>
+            
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-espresso tracking-tight leading-tight">
+                ASONGE BAKERY
+            </h1>
+            
+            <p class="font-hand text-xl sm:text-2xl text-mocha max-w-2xl mx-auto leading-relaxed">
+                제과제빵을 배우며 만들어가는 나만의 작품 기록
+            </p>
+
+            <div class="pt-4 flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-7 py-3.5 rounded-2xl bg-espresso text-cream font-medium text-sm sm:text-base shadow-md hover:bg-cinnamon transition-all duration-300">
+                    작품 구경하기
+                </a>
+                <a href="#about" class="px-7 py-3.5 rounded-2xl bg-beige text-espresso border border-latte font-medium text-sm sm:text-base hover:bg-latte/50 transition-all duration-300">
+                    소개 보기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 소개 (ABOUT ME) -->
+    <section id="about" class="py-16 sm:py-24 px-4 bg-cream">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold tracking-widest text-cinnamon uppercase">Introduction</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mt-1">ABOUT ME</h2>
+                <div class="w-12 h-1 bg-cinnamon mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="bg-beige/70 border border-latte rounded-3xl p-6 sm:p-10 shadow-sm">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <!-- 베이커리 감성 아이콘 배지 -->
+                    <div class="w-28 h-28 sm:w-32 sm:h-32 shrink-0 rounded-full bg-cream border-2 border-latte flex flex-col items-center justify-center shadow-inner">
+                        <span class="text-4xl sm:text-5xl" aria-hidden="true">👩‍🍳</span>
+                        <span class="text-[11px] font-medium text-cinnamon mt-1">Baker</span>
+                    </div>
+
+                    <!-- 프로필 및 소감 -->
+                    <div class="flex-1 text-center md:text-left space-y-5">
+                        <div class="space-y-1">
+                            <div class="inline-block px-3 py-1 rounded-lg bg-cream text-cinnamon text-xs sm:text-sm font-semibold border border-latte">
+                                혜전대학교 제과제빵과
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-espresso pt-1">
+                                이예성
+                            </h3>
+                        </div>
+
+                        <div class="bg-cream/90 rounded-2xl p-5 sm:p-6 border border-latte/80">
+                            <h4 class="text-sm font-bold text-cinnamon mb-2 flex items-center justify-center md:justify-start gap-1.5">
+                                <span aria-hidden="true">🍞</span> 이번 학기 느낀 점
+                            </h4>
+                            <p class="text-mocha text-base sm:text-lg leading-relaxed font-normal">
+                                이번 학기 동안 제과제빵을 배우면서 다양한 작품을 직접 만들어 볼 수 있어서 정말 좋았습니다. 
+                                새로운 기술과 레시피를 하나씩 배우고 손수 결과물을 완성해 가는 과정이 무척 재미있었고, 
+                                앞으로도 꾸준히 연습하며 더 많은 경험을 쌓아가고 싶습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 프로젝트 갤러리 (MY PROJECT) & 4. 영상 및 소리 (VIDEO & AUDIO) -->
+    <section id="projects" class="py-16 sm:py-24 px-4 bg-beige/50 border-y border-latte/60">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold tracking-widest text-cinnamon uppercase">Portfolio Gallery</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mt-1">MY PROJECT</h2>
+                <p class="text-mocha text-sm sm:text-base mt-3">제과제빵 실습과 AI 도구를 활용해 기획하고 디자인한 작품들입니다.</p>
+                <div class="w-12 h-1 bg-cinnamon mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- 작품 3종 카드 그리드 (이미지 원본 비율 유지 및 잘림 방지) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                
+                <!-- 작품 1: 흑임자 크루아상 -->
+                <article class="bg-cream rounded-3xl border border-latte overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+                    <div class="w-full bg-beige/40 p-4 flex items-center justify-center border-b border-latte/50">
+                        <img 
+                            src="images/work1.png" 
+                            alt="흑임자 크루아상" 
+                            class="max-w-full w-auto h-auto object-contain rounded-2xl"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x600/F4ECE1/4A3525?text=images/work1.png';"
+                        >
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-espresso mb-2">흑임자 크루아상</h3>
+                            <p class="text-mocha text-sm leading-relaxed">
+                                흑임자의 고소한 맛과 바삭한 크루아상의 특징을 살린 제과제빵 신메뉴 이미지
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-latte/60">
+                            <!-- 아래 [실제 사용한 주차와 AI 도구 표시] 부분을 나중에 직접 수정해 주세요 -->
+                            <span class="inline-block text-xs font-medium text-cinnamon bg-beige px-3 py-1.5 rounded-xl leading-relaxed">
+                                주차 및 사용한 AI: [실제 사용한 주차와 AI 도구 표시]
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 작품 2: 제과작품 전시 포스터 -->
+                <article class="bg-cream rounded-3xl border border-latte overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+                    <div class="w-full bg-beige/40 p-4 flex items-center justify-center border-b border-latte/50">
+                        <img 
+                            src="images/work2.png" 
+                            alt="제과작품 전시 포스터" 
+                            class="max-w-full w-auto h-auto object-contain rounded-2xl"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x800/F4ECE1/4A3525?text=images/work2.png';"
+                        >
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-espresso mb-2">제과작품 전시 포스터</h3>
+                            <p class="text-mocha text-sm leading-relaxed">
+                                케이크, 마카롱, 타르트 등을 활용한 제과작품 전시 홍보 이미지
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-latte/60">
+                            <!-- 아래 [실제 사용한 주차와 AI 도구 표시] 부분을 나중에 직접 수정해 주세요 -->
+                            <span class="inline-block text-xs font-medium text-cinnamon bg-beige px-3 py-1.5 rounded-xl leading-relaxed">
+                                주차 및 사용한 AI: [실제 사용한 주차와 AI 도구 표시]
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 작품 3: 제과제빵사 마스코트 -->
+                <article class="bg-cream rounded-3xl border border-latte overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+                    <div class="w-full bg-beige/40 p-4 flex items-center justify-center border-b border-latte/50">
+                        <img 
+                            src="images/work3.png" 
+                            alt="제과제빵사 마스코트" 
+                            class="max-w-full w-auto h-auto object-contain rounded-2xl"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x600/F4ECE1/4A3525?text=images/work3.png';"
+                        >
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-espresso mb-2">제과제빵사 마스코트</h3>
+                            <p class="text-mocha text-sm leading-relaxed">
+                                제과제빵사를 귀엽게 표현한 캐릭터 디자인
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-latte/60">
+                            <!-- 아래 [실제 사용한 주차와 AI 도구 표시] 부분을 나중에 직접 수정해 주세요 -->
+                            <span class="inline-block text-xs font-medium text-cinnamon bg-beige px-3 py-1.5 rounded-xl leading-relaxed">
+                                주차 및 사용한 AI: [실제 사용한 주차와 AI 도구 표시]
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- 4. 영상 및 소리 (VIDEO & AUDIO) - 프로젝트 갤러리 내부 구성 -->
+            <div class="mt-14 pt-12 border-t border-latte">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-cinnamon uppercase">Media Showcase</span>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-espresso mt-1">VIDEO &amp; AUDIO</h3>
+                    <p class="text-mocha text-sm mt-2">베이커리 홍보 영상과 오디오 콘텐츠를 직접 재생해 보세요.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <!-- 홍보 영상 카드 (images/promo.mp4) -->
+                    <div class="bg-cream rounded-3xl border border-latte p-6 shadow-sm flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-lg" aria-hidden="true">🎬</span>
+                                <h4 class="text-lg font-bold text-espresso">베이커리 홍보 영상</h4>
+                            </div>
+                            <p class="text-xs text-mocha mb-4">재생 버튼을 눌러 영상을 감상하고 일시정지할 수 있습니다.</p>
+                        </div>
+                        
+                        <div class="w-full rounded-2xl overflow-hidden bg-espresso/5 border border-latte">
+                            <video 
+                                src="images/promo.mp4" 
+                                controls 
+                                preload="metadata"
+                                class="w-full h-auto max-h-80 mx-auto block"
+                            >
+                                브라우저가 비디오 태그를 지원하지 않습니다.
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- 오디오 카드 (images/podcast.mp3) -->
+                    <div class="bg-cream rounded-3xl border border-latte p-6 shadow-sm flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-lg" aria-hidden="true">🎧</span>
+                                <h4 class="text-lg font-bold text-espresso">베이커리 이야기 팟캐스트</h4>
+                            </div>
+                            <p class="text-xs text-mocha mb-4">오디오 재생 막대를 통해 재생, 일시정지 및 볼륨을 조절할 수 있습니다.</p>
+                        </div>
+
+                        <div class="my-auto bg-beige/70 rounded-2xl p-6 border border-latte/80 flex flex-col items-center justify-center space-y-4">
+                            <div class="w-16 h-16 rounded-full bg-cream border border-latte flex items-center justify-center text-3xl shadow-sm" aria-hidden="true">
+                                ☕
+                            </div>
+                            <p class="text-sm font-medium text-espresso">ASONGE BAKERY Audio Story</p>
+                            <audio 
+                                src="images/podcast.mp3" 
+                                controls 
+                                class="w-full rounded-xl"
+                            >
+                                브라우저가 오디오 태그를 지원하지 않습니다.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 활용 도구 (SKILLS) -->
+    <section id="skills" class="py-16 sm:py-24 px-4 bg-cream">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold tracking-widest text-cinnamon uppercase">AI &amp; Digital Tools</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mt-1">SKILLS</h2>
+                <p class="text-mocha text-sm sm:text-base mt-3">포트폴리오 제작과 베이커리 콘텐츠 기획에 활용한 도구들입니다.</p>
+                <div class="w-12 h-1 bg-cinnamon mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- ChatGPT -->
+                <div class="bg-beige/60 rounded-3xl p-6 border border-latte hover:border-cinnamon transition-colors duration-300 space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-cream border border-latte flex items-center justify-center text-2xl shadow-sm" aria-hidden="true">
+                        💬
+                    </div>
+                    <h3 class="text-lg font-bold text-espresso">ChatGPT</h3>
+                    <p class="text-mocha text-sm leading-relaxed">
+                        신메뉴 콘셉트 아이디어 구상, 작품 소개 문구 초안 작성 및 팟캐스트 대본 정리에 활용했습니다.
+                    </p>
+                </div>
+
+                <!-- Gemini -->
+                <div class="bg-beige/60 rounded-3xl p-6 border border-latte hover:border-cinnamon transition-colors duration-300 space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-cream border border-latte flex items-center justify-center text-2xl shadow-sm" aria-hidden="true">
+                        ✨
+                    </div>
+                    <h3 class="text-lg font-bold text-espresso">Gemini</h3>
+                    <p class="text-mocha text-sm leading-relaxed">
+                        포트폴리오 웹사이트 구조 설계, 웹페이지 코드 작성 및 전체적인 콘텐츠 다듬기 작업에 활용했습니다.
+                    </p>
+                </div>
+
+                <!-- 이미지 생성 AI -->
+                <div class="bg-beige/60 rounded-3xl p-6 border border-latte hover:border-cinnamon transition-colors duration-300 space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-cream border border-latte flex items-center justify-center text-2xl shadow-sm" aria-hidden="true">
+                        🎨
+                    </div>
+                    <h3 class="text-lg font-bold text-espresso">이미지 생성 AI</h3>
+                    <p class="text-mocha text-sm leading-relaxed">
+                        흑임자 크루아상 신메뉴 비주얼, 제과작품 전시 포스터, 제과제빵사 마스코트 캐릭터 디자인 제작에 활용했습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 연락처 (CONTACT) -->
+    <section id="contact" class="py-16 sm:py-24 px-4 bg-beige/60 border-t border-latte">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="text-xs font-bold tracking-widest text-cinnamon uppercase">Get In Touch</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mt-1">CONTACT</h2>
+            <div class="w-12 h-1 bg-cinnamon mx-auto mt-4 mb-10 rounded-full"></div>
+
+            <div class="bg-cream rounded-3xl p-8 sm:p-10 border border-latte shadow-sm max-w-xl mx-auto space-y-6">
+                <div class="space-y-2">
+                    <p class="text-sm font-medium text-cinnamon">혜전대학교 제과제빵과</p>
+                    <h3 class="text-2xl font-bold text-espresso">이예성</h3>
+                </div>
+
+                <div class="pt-4 border-t border-latte/70 space-y-3 text-left">
+                    <label for="email-input" class="block text-xs font-semibold text-mocha uppercase tracking-wider">
+                        E-MAIL (직접 입력 가능)
+                    </label>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input 
+                            type="email" 
+                            id="email-input" 
+                            placeholder="이메일 주소를 입력해 주세요 (예: example@email.com)" 
+                            class="flex-1 px-4 py-3 rounded-2xl bg-beige/50 border border-latte text-espresso placeholder-mocha/50 text-sm focus:outline-none focus:border-cinnamon"
+                        >
+                        <button 
+                            type="button" 
+                            id="save-email-btn"
+                            class="px-5 py-3 rounded-2xl bg-espresso text-cream text-sm font-medium hover:bg-cinnamon transition-colors shrink-0"
+                        >
+                            확인
+                        </button>
+                    </div>
+                    <p id="email-status" class="text-xs text-cinnamon min-h-[1rem]"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. AI 사용 표기 (FOOTER) -->
+    <footer class="bg-espresso text-cream/90 py-10 px-4 text-center">
+        <div class="max-w-4xl mx-auto space-y-3">
+            <p class="font-serif text-lg tracking-wider text-latte">ASONGE BAKERY</p>
+            <p class="text-sm sm:text-base font-normal text-cream">
+                이 사이트의 글과 작품은 AI 도구의 도움으로 만들고 직접 다듬었습니다
+            </p>
+            <p class="text-xs text-cream/60 pt-2">
+                &copy; 2026 이예성 (혜전대학교 제과제빵과). All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 인터랙션 스크립트 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                // 1. 모바일 햄버거 메뉴 토글 및 링크 이동 시 닫기
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileLinks = document.querySelectorAll('.mobile-link');
+
+                if (mobileMenuBtn && mobileMenu) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+
+                    mobileLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.add('hidden');
+                        });
+                    });
+                }
+
+                // 2. 이메일 직접 입력 확인 및 로컬 저장 기능 유지
+                const emailInput = document.getElementById('email-input');
+                const saveEmailBtn = document.getElementById('save-email-btn');
+                const emailStatus = document.getElementById('email-status');
+                const storageKey = 'asonge_bakery_email';
+
+                const savedEmail = localStorage.getItem(storageKey) || localStorage.getItem('yeseong_bakery_email');
+                if (savedEmail && emailInput) {
+                    emailInput.value = savedEmail;
+                }
+
+                if (saveEmailBtn && emailInput && emailStatus) {
+                    saveEmailBtn.addEventListener('click', () => {
+                        const value = emailInput.value.trim();
+                        if (value) {
+                            localStorage.setItem(storageKey, value);
+                            emailStatus.textContent = `이메일(${value})이 화면에 입력되었습니다.`;
+                        } else {
+                            localStorage.removeItem(storageKey);
+                            localStorage.removeItem('yeseong_bakery_email');
+                            emailStatus.textContent = '이메일 주소를 입력해 주세요.';
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error('화면 스크립트 실행 중 오류가 발생했습니다:', error);
+            }
+        });
+    </script>
+</body>
+</html>
